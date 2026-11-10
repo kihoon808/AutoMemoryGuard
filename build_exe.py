@@ -23,6 +23,9 @@ def build() -> int:
     print(f"프로젝트 디렉토리: {project_root}")
     print("==================================================")
 
+    # config 디렉토리가 없으면 자동 생성하여 PyInstaller 누락 오류 방지
+    config_dir.mkdir(parents=True, exist_ok=True)
+
     # Windows PyInstaller 데이터 경로 구분자 ';'
     add_data_flag = f"{config_dir};config"
     assets_dir = project_root / "assets"
