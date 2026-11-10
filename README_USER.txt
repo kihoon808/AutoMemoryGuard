@@ -1,6 +1,6 @@
 ================================================================================
 AutoMemoryGuard v3.0 - Commercial Gaming Shield & RAM Optimizer
-Developer: Kihoon Park (kihoon808)
+Developer: Kihyn Cho (kihoon808)
 Repository: https://github.com/kihoon808/AutoMemoryGuard
 ================================================================================
 

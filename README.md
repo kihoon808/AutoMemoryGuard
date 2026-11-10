@@ -125,7 +125,7 @@ python build_exe.py
 This project is licensed under the **Source-Available Non-Commercial License**.
 - **Permitted**: Free for personal, educational, evaluation, and non-commercial use. Users are welcome to inspect, audit, and modify the code locally.
 - **Strictly Prohibited**: Any unauthorized commercial resale, redistribution on digital storefronts (such as Steam, Epic Games Store, Microsoft Store, itch.io), white-labeling, or paid bundling.
-- All exclusive rights for commercial distribution, paid platforms, and commercial monetization are strictly reserved by the author, **Kihoon Park (kihoon808)**.
+- All exclusive rights for commercial distribution, paid platforms, and commercial monetization are strictly reserved by the author, **Kihyn Cho (kihoon808)**.
 
 See the full [LICENSE](file:///c:/Users/kihoo/OneDrive/문서/CPmanager/LICENSE) file for complete legal terms.
 
@@ -219,6 +219,6 @@ python build_exe.py
 본 프로젝트는 **Source-Available Non-Commercial License(비상업적 개인 무료 라이선스)**를 따릅니다.
 - **허용 범위**: 개인적인 비상업적 목적의 사용, 코드 학습, 보안 감사 및 개인 용도의 소스 수정은 완전 무료로 허용됩니다.
 - **엄격 금지**: 본 소프트웨어나 소스 코드를 무단으로 재판매하거나, 디지털 유료 스토어(Steam, Epic Games Store, MS Store, itch.io 등)에 유료로 등록 및 패키징하여 재배포하는 행위는 엄격히 금지됩니다.
-- 본 소프트웨어의 상업적 출시, 플랫폼 등록, 유료화 권리는 원작자인 **박기훈(Kihoon Park, kihoon808)**에게 독점적으로 귀속됩니다.
+- 본 소프트웨어의 상업적 출시, 플랫폼 등록, 유료화 권리는 원작자인 **조기훈(Kihyn Cho, kihoon808)**에게 독점적으로 귀속됩니다.
 
 자세한 법적 조항은 [LICENSE](file:///c:/Users/kihoo/OneDrive/문서/CPmanager/LICENSE) 파일을 참고하십시오.

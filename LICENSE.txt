@@ -1,12 +1,12 @@
 AutoMemoryGuard Source-Available License (Non-Commercial)
 Version 1.0, 2026
 
-Copyright (c) 2026 Kihoon Park (kihoon808). All rights reserved.
+Copyright (c) 2026 Kihyn Cho (kihoon808). All rights reserved.
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 1. DEFINITIONS
-"Software" refers to the source code, object code, executable binaries, documentation, assets, and design files of the AutoMemoryGuard project, authored by Kihoon Park.
+"Software" refers to the source code, object code, executable binaries, documentation, assets, and design files of the AutoMemoryGuard project, authored by Kihyn Cho.
 "Commercial Use" means any use of the Software or derivative works for commercial advantage, monetary compensation, direct or indirect revenue generation, resale, distribution through paid digital distribution platforms (such as Steam, Epic Games Store, Microsoft Store, itch.io), or integration into a commercial product or service.
 "Non-Commercial Use" means personal, educational, research, or evaluation use from which no commercial advantage, revenue, or monetary compensation is derived.
 

@@ -23,7 +23,7 @@ VSVersionInfo(
             StringStruct(u'FileDescription', u'AutoMemoryGuard - Commercial Gaming Shield & RAM Optimizer'),
             StringStruct(u'FileVersion', u'1.0.0.0'),
             StringStruct(u'InternalName', u'AutoMemoryGuard.exe'),
-            StringStruct(u'LegalCopyright', u'Copyright (c) 2026 AutoMemoryGuard. All rights reserved.'),
+            StringStruct(u'LegalCopyright', u'Copyright (c) 2026 Kihyn Cho. All rights reserved.'),
             StringStruct(u'OriginalFilename', u'AutoMemoryGuard.exe'),
             StringStruct(u'ProductName', u'AutoMemoryGuard'),
             StringStruct(u'ProductVersion', u'1.0.0.0')
