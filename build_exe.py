@@ -23,11 +23,7 @@ def build() -> int:
     print(f"프로젝트 디렉토리: {project_root}")
     print("==================================================")
 
-    # config 디렉토리가 없으면 자동 생성하여 PyInstaller 누락 오류 방지
-    config_dir.mkdir(parents=True, exist_ok=True)
-
     # Windows PyInstaller 데이터 경로 구분자 ';'
-    add_data_flag = f"{config_dir};config"
     assets_dir = project_root / "assets"
     add_assets_flag = f"{assets_dir};assets"
     icon_path = assets_dir / "icon.ico"
@@ -52,7 +48,6 @@ def build() -> int:
         "--exclude-module", "unittest",
         "--exclude-module", "pydoc",
         "--exclude-module", "tkinter.test",
-        f"--add-data={add_data_flag}",
         f"--add-data={add_assets_flag}",
         f"--distpath={dist_dir}",
         f"--workpath={build_dir}",
