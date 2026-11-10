@@ -751,17 +751,23 @@ class MemoryMonitorDaemon(threading.Thread):
 
             # --- [2단계 자동 대응]: 1단계 후에도 2단계 임계치 초과 시 ---
             if post_trim_percent >= stage2_threshold:
-                _LOGGER.warning(
-                    "[자동 2단계] 1단계 압축 후에도 메모리(%.1f%%)가 2단계 임계치(%.1f%%)를 초과하여 유휴 프로세스 종료를 발동합니다.",
-                    post_trim_percent,
-                    stage2_threshold,
-                )
-                action_type = "STAGE2_AUTO_KILL"
+                # 게이밍 모드 활성 중에는 사용자 작업물 및 백그라운드 무단 종료를 방지하기 위해 2단계 강제 종료 차단
+                if self.gaming_engine.is_active:
+                    _LOGGER.info(
+                        "[게이밍 쉴드] 게임 구동 중 사용자 작업물 보호를 위해 2단계 강제 종료를 차단하고 1단계 압축 상태를 유지합니다."
+                    )
+                else:
+                    _LOGGER.warning(
+                        "[자동 2단계] 1단계 압축 후에도 메모리(%.1f%%)가 2단계 임계치(%.1f%%)를 초과하여 유휴 프로세스 종료를 발동합니다.",
+                        post_trim_percent,
+                        stage2_threshold,
+                    )
+                    action_type = "STAGE2_AUTO_KILL"
 
-                # 유휴 백그라운드 프로세스 안전 종료
-                kill_result = self.killer.terminate_candidates(max_kills=5, dry_run=False)
-                killed_count = kill_result.get("killed_count", 0)
-                total_freed_mb += kill_result.get("total_freed_mb", 0.0)
+                    # 유휴 백그라운드 프로세스 안전 종료
+                    kill_result = self.killer.terminate_candidates(max_kills=5, dry_run=False)
+                    killed_count = kill_result.get("killed_count", 0)
+                    total_freed_mb += kill_result.get("total_freed_mb", 0.0)
 
             # 정리 완료 상태 기록 및 쿨다운 타이머 시작
             self.last_cleanup_timestamp = time.time()

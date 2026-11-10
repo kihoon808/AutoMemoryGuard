@@ -36,12 +36,30 @@ except ImportError:
 
 _LOGGER = get_logger("MemoryTrimmer")
 
-# Working Set 압축 시 프레임 드랍이나 오디오 노이즈를 유발하는 시스템 보호 프로세스
+# Working Set 압축 시 프레임 드랍, 오디오 노이즈, 안티치트 충돌을 방지하기 위한 영구 보호 프로세스
 TRIM_PROTECTED_NAMES: Set[str] = {
+    # Windows 필수 디스플레이/오디오/보안 커널 서비스
     "audiodg.exe",
     "dwm.exe",
     "memory compression",
     "csrss.exe",
+    "smss.exe",
+    "wininit.exe",
+    "services.exe",
+    "lsass.exe",
+    # 메이저 안티치트 서비스 (핸들 조작 및 Working Set 플러시 시 오탐 방지)
+    "vgc.exe",
+    "vgk.sys",
+    "easyanticheat.exe",
+    "easyanticheat_eos.exe",
+    "battleye.exe",
+    "beservice.exe",
+    # 게임 플랫폼 런처 및 오버레이
+    "steam.exe",
+    "steamwebhelper.exe",
+    "riotclientux.exe",
+    "riotclientservices.exe",
+    "epicgameslauncher.exe",
 }
 
 # Win32 프로세스 접근 권한 마스크 상수 (Windows 11 제한된 정보 쿼리 우선)
@@ -223,6 +241,14 @@ class MemoryTrimmer:
         ignored_pids: Set[int] = {0, 4, current_pid}
         if exclude_pids:
             ignored_pids.update(exclude_pids)
+            # 활성 게임 프로세스의 모든 하위 자식(렌더러, 오버레이, 안티치트 래퍼)까지 연쇄 보호
+            for epid in list(exclude_pids):
+                try:
+                    p = psutil.Process(epid)
+                    for child in p.children(recursive=True):
+                        ignored_pids.add(child.pid)
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    pass
 
         # 포그라운드 활성 윈도우 및 직계 자식(GPU/렌더러) 프로세스 압축 제외 (사용자 입력 지연 제로화)
         fg_pid = 0

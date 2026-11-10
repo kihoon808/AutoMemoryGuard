@@ -125,6 +125,10 @@ class GuardConfig:
     user_whitelist: List[str] = field(default_factory=lambda: list(DEFAULT_USER_WHITELIST))
     target_bloatware_list: List[str] = field(default_factory=lambda: list(DEFAULT_TARGET_BLOATWARE_LIST))
 
+    def __post_init__(self) -> None:
+        """데이터 모델 생성 직후 무결성 검증 및 정규화를 자동 실행합니다."""
+        self.validate()
+
     def validate(self) -> None:
         """설정값의 물리적/논리적 유효성을 검증하고 소문자 정규화를 수행합니다."""
         if self.polling_interval_sec < 1:
