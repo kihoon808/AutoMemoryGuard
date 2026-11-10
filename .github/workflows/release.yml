@@ -1,0 +1,61 @@
+name: Build & Release Standalone Binary
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build AutoMemoryGuard for Windows x64
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build standalone executable (.exe)
+        run: |
+          python build_exe.py
+
+      - name: Package release ZIP
+        run: |
+          python package_release.py
+
+      - name: Extract Tag or Version
+        id: vars
+        shell: bash
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          else
+            echo "version=v1.0.0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create GitHub Release and Upload Asset
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: AutoMemoryGuard ${{ steps.vars.outputs.version }} - Commercial Gaming Shield
+          files: |
+            dist/AutoMemoryGuard_v1.0.0.zip
+            dist/AutoMemoryGuard.exe
+          draft: false
+          prerelease: false
+          generate_release_notes: true
