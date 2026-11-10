@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller build outputs
+build/
+dist/
+*.spec
+
+# Application runtime outputs
+logs/
+config/settings.json
+
+# Development & IDE configs
+.vscode/
+.idea/
+.gemini/
+scratch/
+*.tmp
+*.log
+
+# Test & Package folders
+Argon_Package/
+
+# Internal Business & Commercialization Roadmap (Confidential)
+COMMERCIALIZATION_GUIDE.md

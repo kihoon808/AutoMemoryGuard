@@ -1,0 +1,32 @@
+AutoMemoryGuard Source-Available License (Non-Commercial)
+Version 1.0, 2026
+
+Copyright (c) 2026 Kihoon Park (kihoon808). All rights reserved.
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. DEFINITIONS
+"Software" refers to the source code, object code, executable binaries, documentation, assets, and design files of the AutoMemoryGuard project, authored by Kihoon Park.
+"Commercial Use" means any use of the Software or derivative works for commercial advantage, monetary compensation, direct or indirect revenue generation, resale, distribution through paid digital distribution platforms (such as Steam, Epic Games Store, Microsoft Store, itch.io), or integration into a commercial product or service.
+"Non-Commercial Use" means personal, educational, research, or evaluation use from which no commercial advantage, revenue, or monetary compensation is derived.
+
+2. GRANT OF LICENSE (NON-COMMERCIAL)
+Subject to the terms of this License, the Copyright Holder hereby grants to any person obtaining a copy of the Software a worldwide, non-exclusive, non-transferable, revocable license to:
+(a) Run, execute, and use the Software in binary or source form solely for personal, non-commercial purposes.
+(b) Inspect, review, study, and compile the source code for personal educational and security-audit purposes.
+(c) Modify the source code solely for personal, non-commercial use, provided that all original copyright notices, author attributions, and this License remain intact in all copies and substantial portions of the Software.
+
+3. STRICT PROHIBITIONS & COMMERCIAL RESERVATION
+(a) NO COMMERCIAL DISTRIBUTION OR RESALE: You may NOT sell, resell, lease, sublicense, distribute, or make available the Software, any portion thereof, or any derivative works to third parties for a fee, subscription, donation gate, or any form of monetary consideration.
+(b) STOREFRONT DISTRIBUTION PROHIBITION: You may NOT publish, upload, or distribute the Software or derivative works on any commercial storefront, including but not limited to Valve Steam, Epic Games Store, Microsoft Store, itch.io, Gumroad, or Patreon, without explicit, written prior authorization signed by the Copyright Holder.
+(c) NO REBRANDING OR WHITE-LABELING: You may NOT remove, alter, or obscure any copyright notices, branding, watermarks, or telemetry identifiers, nor represent the Software as your own proprietary work.
+(d) EXCLUSIVE MONETIZATION RIGHTS: The Copyright Holder exclusively reserves all rights to sell, commercialize, package, and distribute the Software on paid storefronts, subscription platforms, and commercial enterprise channels.
+
+4. REDISTRIBUTION OF MODIFICATIONS
+If you share or mirror any modified versions of the Software, you must:
+(a) Include a prominent notice stating that you have modified the original Software and specifying the nature of the modifications.
+(b) Include the complete text of this License and retain all original copyright notices.
+(c) Distribute under terms that do NOT permit any commercial exploitation.
+
+5. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, SYSTEM CRASH, DATA LOSS, HARDWARE DAMAGE, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
